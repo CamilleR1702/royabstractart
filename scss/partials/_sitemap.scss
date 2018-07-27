@@ -1,0 +1,37 @@
+// SITE MAP 
+
+.page-template-sitemap{
+
+    .block-content{
+        margin-bottom: 2em;
+        .inner{
+            h1{
+                text-transform: uppercase;
+                padding: 1em 0 .5em 0;
+            }
+
+            h2{
+                padding: 1em 0 1em 0;
+                font-size: 1.2em;
+            }
+
+            h3{
+                padding: .5em;
+            }
+
+            ul{
+                padding-left: 1em;
+                li{
+                    a{
+
+                        color: $color-1;
+
+                        &:hover{
+                            color: $color-2;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}

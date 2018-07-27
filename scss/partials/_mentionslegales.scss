@@ -1,0 +1,33 @@
+.page-template-mentions-legales{
+    .block-content{
+        .inner{
+            padding: 1em;
+
+            h1{
+                color: $color-1;
+                text-transform: uppercase;
+                padding: 1em;
+                padding: 1em;
+                text-align: center;
+            }
+            .block{
+                h2{
+                    color: $color-1;
+                    padding: .5em 0;
+                    font-size: 1.2em;
+                }
+                p{
+                    text-align: justify;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm){
+        .block-content{
+            .inner{
+                padding: 6em;
+            }
+        }
+    }
+}

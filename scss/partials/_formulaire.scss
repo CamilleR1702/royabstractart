@@ -1,0 +1,91 @@
+
+.under-line{
+    .formulaire {
+        
+        background: rgba(255, 255, 255, 0.9);
+        
+        
+        border-radius: 10px;
+        
+        position: absolute;
+            right: 10px;
+            top: 40px;
+        display: block;
+        z-index: 9999;
+        height: 0;
+        overflow: hidden;
+        &.active{
+            -webkit-box-shadow: 0 0 2em 3px rgba(0,0,0,0.71);
+            -moz-box-shadow: 0 0 2em 3px rgba(0,0,0,0.71);
+            box-shadow: 0 0 2em 3px rgba(0,0,0,0.71);
+            height: auto;
+            padding: 2em;
+            border: 3px solid orange;
+            transition: .8s;
+            h2,p{
+                color: black;
+            }
+            .control-label{
+                color: orange;
+            }
+            .form-control{
+                -webkit-box-shadow: 0 0 2em 3px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0 0 2em 3px rgba(0,0,0,0.2);
+            box-shadow: 0 0 2em 3px rgba(0,0,0,0.2);
+            }
+            .btn{
+                background: black;
+                color: orange;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+
+.block-footer{
+         .formulaire-footer {
+        
+        
+        background: none;
+        
+        border-radius: 10px;
+        
+        position: absolute;
+            bottom: 150px;
+        display: block;
+        z-index: 9999;
+        height: 0;
+             right: 15px;
+        overflow: hidden;
+        &.active{
+            background: rgba(255, 255, 255, 0.9);
+            -webkit-box-shadow: 0 0 2em 3px rgba(0,0,0,0.71);
+            -moz-box-shadow: 0 0 2em 3px rgba(0,0,0,0.71);
+            box-shadow: 0 0 2em 3px rgba(0,0,0,0.71);
+            height: auto;
+            padding: 2em;
+            border: 3px solid orange;
+            transition: .8s;
+            h2,p{
+                color: black;
+            }
+            .control-label{
+                color: orange;
+            }
+            .form-control{
+                -webkit-box-shadow: 0 0 2em 3px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0 0 2em 3px rgba(0,0,0,0.2);
+            box-shadow: 0 0 2em 3px rgba(0,0,0,0.2);
+            }
+            .btn{
+                background: black;
+                color: orange;
+                border-radius: 5px;
+            }
+        }
+             @media (min-width: $screen-lg){
+                 
+             }
+    }
+}
