@@ -273,7 +273,7 @@
   </div>
 </section>
 
-<section class="block-section block-section-gallery fadeinfast">
+<section class="block-section block-section-gallery">
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">

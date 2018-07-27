@@ -1,5 +1,5 @@
 {
-  "name": "caprojetam00",
+  "name": "abstractart",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CamilleR1702/caprojetam00/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/CamilleR1702/caprojetam00#readme",
+  "homepage": "",
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",

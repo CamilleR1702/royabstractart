@@ -1,29 +1,20 @@
  /*
- Theme Name:   costa-theme
+ Theme Name:   abstractart
  Theme URI:
- Description:  costa-theme
- Author:       Team pmc
+ Description:  abstractart
+ Author:       CamilleRaher
  Author URI:   http://example.com
  Template:     _tk
  Version:      1.0.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
- Text Domain:  costa-theme
+ Text Domain:  abstractart
 */
 
 @import "partials/variables";
 @import "partials/functions";
 @import "partials/mixins";
 @import "partials/reset";
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "partials/app";
-@import "partials/fonts";
-@import "partials/front-page";
-@import "partials/formulaire";
-@import "partials/page-devis";
-@import "partials/category";
-@import "partials/single";
-@import "partials/404";
-@import "partials/sitemap";
-@import "partials/mentionslegales";
+@import "partials/canvas";

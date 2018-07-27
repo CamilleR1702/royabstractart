@@ -1,0 +1,152 @@
+
+
+/* canvas template */
+
+.block-header-canvas #headerCanvas .background-img{
+  height: 50vH;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.block-header-canvas #headerCanvas .background-img .inner{
+  padding: 1rem;
+}
+
+.block-header-canvas #headerCanvas .background-img .text{
+  text-transform: uppercase;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: .2rem;
+  text-align: center;
+}
+
+.block-header-canvas #headerCanvas .background-img .text span{
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.block-header-canvas #headerCanvas .background-img .inner .btn-view{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  padding: .5rem 1rem;
+}
+
+.block-section-popular{
+  text-align: center;
+}
+
+.block-section-popular h1{
+  text-transform: uppercase;
+  padding: 2rem 0 1rem 0;
+}
+
+.block-section-popular h2{
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.block-section-popular #mostPopular{
+  padding: 1rem 0;
+}
+
+.block-section-popular #mostPopular .item h3{
+  font-size: 1rem;
+  padding-top: .5rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.block-section-popular #mostPopular .item .sales{
+  font-size: .9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.block-section-popular #mostPopular .item .inner{
+  height: 23vH;
+  overflow: hidden;
+}
+
+.block-section-collection{
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.block-section-collection h2{
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.block-section-collection .item .inner .background-img{
+
+}
+
+.block-section-collection .item .background-img{
+  height: 50vH;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1rem 0;
+}
+
+.block-section-collection .item .background-img .text{
+  text-transform: uppercase;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: .2rem;
+  text-align: center;
+}
+
+.block-section-collection .item .background-img .text span{
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.block-section-collection .item .background-img .inner .btn-view{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  padding: .5rem 1rem;
+}
+
+
+/* block category */
+
+.block-section-category-color h2{
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.category-template .breadcrumb{
+  background-color: transparent;
+  text-transform: uppercase;
+}
+
+.category-template .breadcrumb li{
+  text-decoration: none;
+  list-style-type: none;
+  display: inline-block;
+}
+
+
+.block-main-category.block-main-category-most-popular .container-fluid{
+
+}
+
+
+/* Block footer */
+
+.block-footer{
+  background-color: #323232;
+  padding: 2rem;
+  margin-top: 1rem;
+  color: white;
+}
