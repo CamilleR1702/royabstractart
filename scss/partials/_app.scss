@@ -436,7 +436,6 @@
   .block-section-about{
     padding: 6rem 0;
     .img-canvas{
-      background-image: url(about.jpg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -671,4 +670,14 @@
       }
     }
   }
+}
+
+
+/* Block footer */
+
+.block-footer{
+  background-color: #323232;
+  padding: 2rem;
+  margin-top: 1rem;
+  color: white;
 }

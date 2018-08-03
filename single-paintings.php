@@ -6,7 +6,7 @@ if ( is_single() ) $post_id = get_the_ID();
 
 $args = array(
     'post_not_in' => array ($post_id),
-    'post_type' => 'canvas',
+    'post_type' => 'paintings',
     'order' => 'DESC',
     'post_per_page' => 3
 );

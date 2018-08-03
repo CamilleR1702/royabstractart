@@ -1,57 +1,50 @@
 <?php
-
-/*
-Template Name: category-most-popular
-*/
-
 get_header();
-
-// load all 'category' terms for the post
-$terms = get_the_terms( get_the_ID(), 'category');
-
-
-// we will use the first term to load ACF data from
-if( !empty($terms) ) {
-
-  $term = array_pop($terms);
-}
-
 ?>
 
-<?php
-$categories = get_the_category();
-$separator = '';
-$output = '';
-if ( ! empty( $categories ) ) {
-  foreach( $categories as $category ) {
-    $output .= '<li><a href="' . esc_url( get_category_link( $terms ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a></li>' . $separator;
-  }
-  echo trim( $output, $separator );
-}
-?>
+
 <div class="category-template">
   <div class="container">
     <div class="row">
       <div class="col-3">
         <aside class="aside-bar">
-          <?php custom_breadcrumbs(); ?>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="<?php echo get_home_url(); ?>">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo get_post_type_archive_link( 'paintings' ); ?>">Paintings</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><?php single_cat_title(''); ?></li>
+            </ol>
+          </nav>
+          <?php // custom_breadcrumbs(); ?>
+          <nav aria-label="list-categories" class="list-categories">
+            <ul>
+              <?php wp_list_categories('show_count=0&title_li=<h2>Categories</h2>'); ?>
+            </ul>
+          </nav>
         </aside>
       </div>
       <div class="col-9">
         <main class="block-main-category block-main-category-most-popular">
           <div class="row">
             <div class="col-12">
-              <h1>Tous nos tableaux</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h1>All items</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adiex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
           </div>
           <?php
+
           $args = array (
-            'post_type'      => 'canvas',
+            'post_type'      => 'paintings',
             'order'          => 'DESC',
             'posts_per_page' => 9
           );
-          $query = new WP_Query( $args );
+
+          if($cat == 1){
+            $query = new WP_Query($args);
+          }else{
+            $args['cat'] = $cat;
+            $query = new WP_Query( $args );
+          }
           ?>
 
           <div class="row">

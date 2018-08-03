@@ -59,10 +59,10 @@ function wpm_custom_post_type() {
   // On rentre les différentes dénominations de notre custom post type qui seront affichées dans l'administration
   $labels = array(
     'name'                => _x( 'Tableaux', 'Post Type General Name'),
-    'singular_name'       => _x( 'Tableaux', 'Post Type Singular Name'),
+    'singular_name'       => _x( 'Tableau', 'Post Type Singular Name'),
     'menu_name'           => __( 'Tableaux'),
-    'all_items'           => __( 'Canvas'),
-    'view_item'           => __( 'Voir les tableaux'),
+    'all_items'           => __( 'Paintings'),
+    'view_item'           => __( 'Voir'),
     'add_new_item'        => __( 'Ajouter'),
     'add_new'             => __( 'Ajouter'),
     'edit_item'           => __( 'Editer la fiche'),
@@ -75,26 +75,26 @@ function wpm_custom_post_type() {
   // On peut définir ici d'autres options pour notre custom post type
 
   $args = array(
-    'label'               => __( 'canvas'),
-    'description'         => __( 'Found all canvas here.'),
+    'label'               => __( 'paintings'),
+    'description'         => __( 'Found all paintings here.'),
     'labels'              => $labels,
     'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'comments', 'author' ),
     'taxonomies'          => array('category', 'post_tag'),
     'hierarchical'        => false,
     'public'              => true,
     'menu_position'       => 5,
-    'has_archive'         => 'canvas',
-    'rewrite'			        => array( 'slug' => 'canvas', 'with_front' => false)
+    'has_archive'         => true,
+    'rewrite'			        => array( 'slug' => 'paintings', 'with_front' => false),
 
   );
 
   // On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
-  register_post_type( 'canvas', $args );
+  register_post_type( 'paintings', $args );
 
   // On rentre les différentes dénominations de notre custom post type qui seront affichées dans l'administration
   $labels = array(
     'name'                => _x( 'Evenements', 'Post Type General Name'),
-    'singular_name'       => _x( 'Evenements', 'Post Type Singular Name'),
+    'singular_name'       => _x( 'Evenement', 'Post Type Singular Name'),
     'menu_name'           => __( 'Evenements'),
     'all_items'           => __( 'Events'),
     'view_item'           => __( 'Voir'),
@@ -114,7 +114,7 @@ function wpm_custom_post_type() {
     'description'         => __( 'Found all canvas here.'),
     'labels'              => $labels,
     'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'comments', 'author' ),
-    'taxonomies'          => array('category', 'post_tag'),
+    'taxonomies'          => array( 'post_tag'),
     'hierarchical'        => false,
     'public'              => true,
     'menu_position'       => 6,
@@ -125,6 +125,9 @@ function wpm_custom_post_type() {
 
   // On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
   register_post_type( 'events', $args );
+
+
+
 }
 
 add_action( 'init', 'wpm_custom_post_type', 0 );
@@ -250,7 +253,7 @@ function custom_breadcrumbs() {
   $home_title         = 'Home';
 
   // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
-  $custom_taxonomy    = 'product_cat';
+  $custom_taxonomy    = 'paintings';
 
   // Get the query & post information
   global $post,$wp_query;
@@ -264,9 +267,33 @@ function custom_breadcrumbs() {
     // Home page
     echo '<li class="breadcrumb-item"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
 
-    if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
+    if ( is_archive() && !is_tax() && !is_tag() ) {
+      if(!is_category()){
 
-      echo '<li class="breadcrumb-item item-current item-archive active" aria-current="page"><strong class="bread-current bread-archive">' . post_type_archive_title($prefix, false) . '</strong></li>';
+        echo '<li class="breadcrumb-item item-current item-archive active" aria-current="page"><strong class="bread-current bread-archive">' . post_type_archive_title($prefix, false) . '</strong></li>';
+
+      }else{
+        //custom post type
+
+        // If post is a custom post type
+        $post_type = get_post_type();
+
+        // If it is a custom post type display name and link
+        if($post_type != 'post') {
+
+          $post_type_object = get_post_type_object($post_type);
+          $post_type_archive = get_post_type_archive_link($post_type);
+
+          var_dump($post_type_object);
+
+          echo '<li class="breadcrumb-item item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->singular_name . '</a></li>';
+
+        }
+
+        $custom_tax_name = get_queried_object()->name;
+        echo '<li class="breadcrumb-item item-current item-archive"><strong class="bread-current bread-archive">' . $custom_tax_name . '</strong></li>';
+
+      }
 
     } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
 
@@ -484,6 +511,19 @@ if( function_exists('acf_add_options_page') ) {
     'update_button' => __('Mettre à jour', 'acf'),
     'redirect'      => false
   ));
-
-
 }
+
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
+// MODIFIER CSS ADMIN
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
+
+function admin_css() {
+
+$admin_handle = 'admin_css';
+$admin_stylesheet = get_template_directory_uri() . '/dist/css/admin.css';
+
+wp_enqueue_style( $admin_handle, $admin_stylesheet );
+}
+add_action('admin_print_styles', 'admin_css', 11 );

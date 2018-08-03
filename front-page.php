@@ -98,7 +98,7 @@
         <div class="col-12 col-lg-6">
           <?php
           $args = array (
-            'post_type'        => 'canvas',
+            'post_type'        => 'paintings',
             'order'            => 'DESC',
             'post_status'      => 'publish',
             'category'         => 5,
@@ -134,10 +134,10 @@
 
         <?php
         $args = array (
-          'post_type'        => 'canvas',
+          'post_type'        => 'paintings',
           'order'            => 'DESC',
           'post_status'      => 'publish',
-          'category'         => 5,
+          'cat'         => 4,
           'offset'           => 1,
           'posts_per_page'   => 1
         );
@@ -287,7 +287,7 @@
 
             <?php
             $args = array (
-              'post_type'      => 'canvas',
+              'post_type'      => 'paintings',
               'order'          => 'DESC',
               'posts_per_page' => 4
             );
