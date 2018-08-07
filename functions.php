@@ -46,13 +46,28 @@ function wpse156165_menu_add_class( $atts, $item, $args ) {
 
 // -------------------------------------------------------------------
 // -------------------------------------------------------------------
+// PRIVATE REDIRECT WP
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
+
+// function is_login_page() {
+//     return in_array( $GLOBALS['pagenow'], array( 'wp-login.php', 'wp-register.php' ) );
+// }
+//
+// function wpse_make_blog_private() {
+//     if ( ! is_user_logged_in() && ! is_admin() && ! is_login_page() ) {
+//         wp_redirect(home_url('/wp-admin'));
+//     }
+// }
+// add_action( 'wp', 'wpse_make_blog_private' );
+
+
+// -------------------------------------------------------------------
+// -------------------------------------------------------------------
 // AJOUTER LES CUSTOMS POSTS TYPE
 // -------------------------------------------------------------------
 // -------------------------------------------------------------------
 
-/*
-* On utilise une fonction pour créer notre custom post type 'Séries TV'
-*/
 
 function wpm_custom_post_type() {
 

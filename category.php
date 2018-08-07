@@ -27,8 +27,8 @@ get_header();
         <main class="block-main-category block-main-category-most-popular">
           <div class="row">
             <div class="col-12">
-              <h1>All items</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adiex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h1><?php single_cat_title(''); ?></h1>
+              <p><?php echo category_description(); ?></p>
             </div>
           </div>
           <?php
